@@ -12,7 +12,7 @@ public class QuizGame {
       boolean isSimOuNao;
       int pontuacao = 0;
       int count = 0;
-      String respostaUsuario = "";
+      String respostaUsuario;
 
       List<Integer> indices = new ArrayList<>();
       for (int i = 0; i < perguntas.size(); i++) {
@@ -46,12 +46,12 @@ public class QuizGame {
           isLetraCerta = false;
           System.out.print("Digite a letra da resposta correta: ");
           respostaUsuario = validaLetra(scan.next());
-          for(int j = 0; j < letras.length; j++) {
-            if(respostaUsuario.equals(letras[j])) {
-              isLetraCerta = true;
-              break;
+            for (String letra : letras) {
+                if (respostaUsuario.equals(letra)) {
+                    isLetraCerta = true;
+                    break;
+                }
             }
-          }
           if(!isLetraCerta) {
             System.out.println("Opção inválida. Digite uma opção válida");
           }
